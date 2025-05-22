@@ -3,7 +3,14 @@
 
 This project automates the deployment of a secure, scalable, and highly available multi-tier web infrastructure on AWS using Terraform. It follows best practices for cloud architecture by implementing a layered approach that separates public and private resources.
 
-## Project Structure:
+---
+## 🏗️Architecture
+
+![AWS Architecture](./Architecture.gif)
+
+## 📂Project Structure
+
+```
 ├── Modules/  
 │   ├── ALB/  
 │   │   ├── main.tf  
@@ -36,6 +43,8 @@ This project automates the deployment of a secure, scalable, and highly availabl
 ├──. ignore  
 ├── AWS Multi-Tier Architecture.drawio.svg  
 └── README.md  
+```
+---
 
 ## 📂 Documentation
 
