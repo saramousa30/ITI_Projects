@@ -6,7 +6,7 @@ This project automates the deployment of a secure, scalable, and highly availabl
 ---
 ## 🏗️Architecture
 
-![AWS Architecture](./Architecture.gif)
+![AWS Architecture](Architecture.gif)
 
 ## 📂Project Structure
 
