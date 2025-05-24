@@ -56,4 +56,6 @@ This project automates the deployment of a secure, scalable, and highly availabl
 
 
 ## 👩‍💻 Author
-- Sara Mousa
+**Sara Mousa**  
+Cloud & DevOps Engineer
+
