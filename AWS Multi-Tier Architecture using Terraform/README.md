@@ -6,7 +6,7 @@ This project automates the deployment of a secure, scalable, and highly availabl
 ---
 ## 🏗️Architecture
 
-![AWS Diagram](AWS Multi-Tier Architecture.drawio.svg)
+![AWS Diagram](AWS_Multi-Tier_Architecture.drawio.svg)
 
 ## 📂Project Structure
 
