@@ -1,0 +1,64 @@
+---
+- name : Docker App Deployment
+  hosts : all
+  remote_user: ubuntu 
+  become : true
+  tasks:
+    - name: Copy the Dockerfile
+      copy:
+        src: ../Docker_Files/Dockerfile
+        dest: /home/ubuntu/Dockerfile
+
+    - name: Copy the requirements.txt
+      copy:
+        src: ../Docker_Files/requirements.txt
+        dest: /home/ubuntu/requirements.txt
+
+    - name: Copy the App.py
+      copy:
+        src:  ../Docker_Files/APP.py
+        dest: /home/ubuntu/app.py
+  
+    - name: Update APT packages
+      apt:
+        update_cache: yes
+
+    - name: Install prerequisites
+      apt:
+        name: curl
+        state: present  
+
+    - name: Download Docker install script
+      command: curl -fsSL https://get.docker.com -o get-docker.sh
+      args:
+       chdir: /home/ubuntu
+
+    - name: Run Docker install script
+      command: sh get-docker.sh
+      args:
+         chdir: /home/ubuntu
+
+    - name: Add user to Docker group
+      user:
+       name: ubuntu
+       groups: docker
+       append: yes
+
+    - name: Enable and start service docker
+      systemd:
+       name: docker
+       enabled: yes
+       state: started
+
+    - name: Build Docker image
+      command: docker build -t myappimage /home/ubuntu
+      args:
+        chdir: /home/ubuntu
+
+    - name: Create Docker container
+      command: docker container run -it -d --name python-app -p 3000:3000 myappimage
+      args:
+        chdir: /home/ubuntu
+
+
+
