@@ -6,7 +6,7 @@ This project automates the provisioning of AWS infrastructure and the deployment
 ---
 ## 🏗️Architecture
 
-![AWS Diagram](Docker_Deployment_on_AWS.drawio.svg)
+![AWS Diagram](Docker_Deployment_On_AWS.drawio.svg)
 
 ## 📂Project Structure
 	
@@ -48,7 +48,7 @@ Project/
 
 ## 📂 Documentation
 
-[AWS Multi-Tier Architecture using Terraform](https://treasure-smelt-dd3.notion.site/Docker-App-Deployment-on-AWS-using-Ansible-Terraform-1fe2a9d6f042802296a1c2fd9823c480?pvs=4)
+[Docker App Deployment on AWS using Ansible & Terraform](https://treasure-smelt-dd3.notion.site/Docker-App-Deployment-on-AWS-using-Ansible-Terraform-1fe2a9d6f042802296a1c2fd9823c480?pvs=4)
 ## 🔗 Links
 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/saramousa3010/)
