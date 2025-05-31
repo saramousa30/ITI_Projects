@@ -21,6 +21,7 @@ bastion_instance_count = 1
 create_web_instance    = false
 web_instance_count     = 2
 
+
 alb_name          = "ALB"
 is_internal       = false
 alb_type          = "application"
@@ -32,7 +33,20 @@ asg_min_size          = 1
 asg_desired_cap       = 2
 asg_health_check_type = "ELB"
 
+
 db_username = "admin"
 db_password = "#master_password"
 db_name     = "MySQL_Database"
 multi_az    = false
+
+
+alarm_name  = "High_CPU_ASG"
+threshold   = 20
+description = "Alarm when CPU >= 20% for 2 minutes"
+
+
+sns_topic_name         = "cpu-alerts"
+sns_topic_display_name = "High CPU Usage Alerts"
+email_endpoint         = "saramousa30@gmail.com"
+
+
