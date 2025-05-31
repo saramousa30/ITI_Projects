@@ -87,3 +87,21 @@ locals {
   db_hostname = split(":", module.DB.db_endpoint)[0]
 }
 #Because rds_endpoint typically returns something like: <hostname>:3306
+
+#SNS
+module "SNS" {
+  source         = "./Modules/SNS"
+  name           = var.sns_topic_name
+  display_name   = var.sns_topic_name
+  email_endpoint = var.email_endpoint
+}
+
+#CloudWatch
+module "CloudWatch" {
+  source                 = "./Modules/CloudWatch"
+  alarm_name             = var.alarm_name
+  threshold              = var.threshold
+  description            = var.description
+  sns_topic_arn          = module.SNS.asg_cpu_topic_arn
+  autoscaling_group_name = module.ASG.asg_name
+}
