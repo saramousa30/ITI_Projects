@@ -6,7 +6,7 @@ This project automates the provisioning of AWS infrastructure and the deployment
 ---
 ## 🏗️Architecture
 
-![AWS Diagram](Docker_Deployment_on_AWS.drawio.svg)
+![AWS Diagram](Docker_Deployment_On_AWS.drawio.svg)
 
 ## 📂Project Structure
 	
