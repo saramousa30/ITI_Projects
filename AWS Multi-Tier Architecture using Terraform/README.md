@@ -11,38 +11,46 @@ This project automates the deployment of a secure, scalable, and highly availabl
 ## 📂Project Structure
 
 ```
-├── Modules/  
-│   ├── ALB/  
-│   │   ├── main.tf  
-│   │   ├── output.tf  
-│   │   └── variables.tf  
-│   ├── ASG/  
-│   │   ├── main.tf  
-│   │   ├── config_file.sh.tpl  
-│   │   └── variables.tf  
-│   ├── DB/  
-│   │   ├── main.tf  
-│   │   ├── output.tf  
-│   │   └── variables.tf  
-│   ├── EC2/  
-│   │   ├── main.tf  
-│   │   ├── output.tf  
-│   │   └── variables.tf  
-│   ├── Security Group/  
-│   │   ├── main.tf  
-│   │   ├── output.tf  
-│   │   └── variables.tf  
-│   └── VPC/  
-│       ├── main.tf  
-│       ├── output.tf  
-│       └── variables.tf  
-├── backend.tf  
-├── main.tf  
-├── provider.tf  
-├── variables.tf  
-├──. ignore  
-├── AWS Multi-Tier Architecture.drawio.svg  
-└── README.md  
+├── Modules/
+│   ├── ALB/
+│   │   ├── main.tf
+│   │   ├── output.tf
+│   │   └── variables.tf
+│   ├── ASG/
+│   │   ├── config_file.sh.tpl
+│   │   ├── main.tf
+│   │   ├── output.tf
+│   │   └── variables.tf
+│   ├── CloudWatch/
+│   │   ├── main.tf
+│   │   └── variables.tf
+│   ├── DB/
+│   │   ├── main.tf
+│   │   ├── output.tf
+│   │   └── variables.tf
+│   ├── EC2/
+│   │   ├── main.tf
+│   │   ├── output.tf
+│   │   └── variables.tf
+│   ├── Security Group/
+│   │   ├── main.tf
+│   │   ├── output.tf
+│   │   └── variables.tf
+│   ├── SNS/
+│   │   ├── main.tf
+│   │   ├── output.tf
+│   │   └── variables.tf
+│   └── VPC/
+│       ├── main.tf
+│       ├── output.tf
+│       └── variables.tf
+├── backend.tf
+├── main.tf
+├── provider.tf
+├── variables.tf
+├──.gitignore
+├── AWS Multi-Tier Architecture.drawio.svg
+└── README.md
 ```
 ---
 
