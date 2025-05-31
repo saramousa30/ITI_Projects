@@ -144,3 +144,17 @@ variable "db_name" {}
 variable "multi_az" {
   type = bool
 }
+
+#------------------------------------------------------------------
+# CloudWatch Module Variables
+#------------------------------------------------------------------
+variable "alarm_name" {}
+variable "threshold" {}
+variable "description" {}
+
+#------------------------------------------------------------------
+# SNS Module Variables
+#------------------------------------------------------------------
+variable "sns_topic_name" {}
+variable "sns_topic_display_name" {}
+variable "email_endpoint" {}
