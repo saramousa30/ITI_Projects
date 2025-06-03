@@ -83,7 +83,7 @@ kubectl get ingress
 # Make sure to map weatherapp.local in your /etc/hosts file:
 # 127.0.0.1 weatherapp.local
 # Then open:
-http://weatherapp.local
+http://weatherapp.local ```
 
 
 ---
