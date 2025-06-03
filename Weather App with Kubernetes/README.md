@@ -1,90 +1,91 @@
-#  WeatherApp on Kubernetes (KIND)
+# 🌦️ WeatherApp with Kubernetes (KIND)
 
-A cloud-native microservices application deployed on a local Kubernetes cluster using KIND (Kubernetes in Docker). WeatherApp showcases a modular architecture built for learning and experimenting with Kubernetes and microservices locally.
-
----
-
-## 🔍 Project Summary
-
-WeatherApp consists of four main components:
-
-- 🎨 **UI Service (`weatherapp-ui`)** – The frontend user interface.
-- 🌤️ **Weather Engine (`weatherapp-weather`)** – Fetches weather data from external APIs.
-- 🛡️ **User Gateway (`weatherapp-auth`)** – Handles user authentication.
-- 🗃️ **Data Core (MySQL)** – Stores user credentials and related data.
+A local-first, cloud-native microservices application powered by Kubernetes in Docker (KIND). This project is ideal for hands-on experience with Kubernetes and microservice design patterns in a controlled local environment.
 
 ---
 
-## 🧩 System Architecture
+## 📘 Project Overview
 
-Kubernetes primitives are used to manage and orchestrate the application:
+WeatherApp is composed of the following key services:
 
-- ⚙️ **Deployments** for stateless components (UI, Weather, Auth).
-- 🏛️ **StatefulSet** for MySQL, ensuring persistent identity and storage.
-- 🔌 **ClusterIP Services** for internal service discovery and communication.
-- 🌐 **Ingress Controller (Nginx)** to expose the app externally.
-- 💽 **StorageClass** and **PersistentVolumes** to ensure data persistence.
-
-![image](https://github.com/user-attachments/assets/863250b2-2684-4667-89d5-f3677ae0fd54)
+- 🖥️ **Frontend (`weatherapp-ui`)** – The user-facing interface of the application.
+- 🌤 **Weather Service (`weatherapp-weather`)** – Retrieves real-time weather data from external providers.
+- 🔐 **Authentication Service (`weatherapp-auth`)** – Manages user login and access.
+- 🗄️ **Database (MySQL)** – Central store for user credentials and related records.
 
 ---
 
-🛠️ Requirements Before You Begin
-To run WeatherApp locally, ensure you have:
+## 🏗️ Architecture Breakdown
 
-🐋 Docker (for containerization)
+Core Kubernetes components are used to deploy and manage the application:
 
-☸️ KIND or Minikube (for local Kubernetes cluster)
+- 🛠 **Deployments**: For stateless service components like UI, Auth, and Weather.
+- 🧱 **StatefulSet**: Used for MySQL to maintain identity and persistent storage.
+- 📡 **ClusterIP Services**: Facilitate internal service discovery.
+- 🌍 **Ingress (Nginx)**: Exposes services externally through HTTP routing.
+- 💾 **PersistentVolumes + StorageClass**: Provide durable storage for MySQL.
 
-🛠️ Kubectl (for cluster interaction)
+![Architecture](https://github.com/user-attachments/assets/863250b2-2684-4667-89d5-f3677ae0fd54)
 
+---
 
-## 🚀 Deployment Steps
+## 📦 Prerequisites
 
-Follow the steps below to deploy WeatherApp on a local Kubernetes cluster using KIND:
+Ensure the following tools are installed before getting started:
+
+- 🐳 **Docker** – To run containerized workloads.
+- ☸️ **KIND or Minikube** – To spin up a local Kubernetes cluster.
+- 🧰 **Kubectl** – To interact with your Kubernetes cluster.
+
+---
+
+## 🚦 Getting Started
+
+Run the steps below to launch WeatherApp locally:
 
 ```bash
-# 1. Clone the repository
+# Step 1: Clone the repo
 git clone https://github.com/YOUR_GITHUB_USERNAME/weatherapp.git
 cd weatherapp
 
-# 2. Create a KIND cluster
+# Step 2: Create a KIND cluster
 kind create cluster --name weatherapp
 
-# 3. Apply the storage configuration
+# Step 3: Apply storage setup
 kubectl apply -f storageclass.yaml
 
-# 4. Deploy the MySQL database
+# Step 4: Deploy MySQL
 kubectl apply -f statefulset.yaml
 kubectl apply -f headless-service.yaml
 
-# 5. (Optional) Run an initialization job for the database
+# Step 5: (Optional) Initialize the DB
 kubectl apply -f init-job.yaml
 
-# 6. Deploy the application microservices
-kubectl apply -f deployment.yaml        # UI
-kubectl apply -f deployment\ 2.yaml     # Auth service
-kubectl apply -f deployment\ 3.yaml     # Weather service
+# Step 6: Deploy microservices
+kubectl apply -f deployment.yaml        # Frontend
+kubectl apply -f deployment\ 2.yaml     # Auth Service
+kubectl apply -f deployment\ 3.yaml     # Weather Service
 
-# 7. Apply the services for each component
+# Step 7: Apply service definitions
 kubectl apply -f service.yaml
 kubectl apply -f service\ 2.yaml
 kubectl apply -f service\ 3.yaml
 
-# 8. Apply ingress configuration
+# Step 8: Set up Ingress
 kubectl apply -f ingress.yaml
 
-# 9. Verify that all components are running
+# Step 9: Check deployment status
 kubectl get pods
 kubectl get svc
 kubectl get ingress
 
-# 10. Access the application
-# Make sure to map weatherapp.local in your /etc/hosts file:
+# Step 10: Open the app
+# Ensure this entry exists in your /etc/hosts file:
 # 127.0.0.1 weatherapp.local
-# Then open:
+# Then access:
 http://weatherapp.local
 ```
+
 ---
 
 ## 🔗 Links
@@ -96,3 +97,4 @@ http://weatherapp.local
 ## 👩‍💻 Author
 **Sara Mousa**  
 Cloud & DevOps Engineer
+
